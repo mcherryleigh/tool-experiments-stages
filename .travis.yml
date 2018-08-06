@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - "node"
+  - "11"
+  - "10"
+  - "9"
+  - "8"
+
+before_install:
+    # note
+    - echo "before install"
+install:
+    - echo "install"
+    - "npm install"
+script:
+    - "npm run test"
+    - "npm run ci:sendCoverage"

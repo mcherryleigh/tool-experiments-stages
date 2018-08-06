@@ -1,0 +1,9 @@
+# This Repository
+node_modules
+.nyc_output
+docs
+setup
+
+# IntelliJ IDE
+*.iml
+.idea

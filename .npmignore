@@ -1,0 +1,8 @@
+# This Repository
+generated_docs
+node_modules
+setup
+
+# IntelliJ IDE
+*.iml
+.idea

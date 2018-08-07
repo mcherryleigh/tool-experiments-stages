@@ -6,15 +6,14 @@ node_js:
   - "8"
 
 before_install:
-    # note
-    - echo "before install"
+  - echo "before install placeholder"
 install:
-    - echo "install"
-    - "npm install"
+  - "npm install"
 script:
-    - "npm run test"
-    - "npm run ci:sendCoverage"
-    - "npm run esdoc"
+  - "npm run eslint"
+  - "npm run test"
+  - "npm run ci:sendCoverage"
+  - "npm run esdoc"
 deploy:
   local-dir: docs
   provider: pages

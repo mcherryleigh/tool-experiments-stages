@@ -3,7 +3,7 @@
   "scripts": {
     "ci:sendCoverage": "nyc report --reporter=text-lcov | coveralls",
     "esdoc": "esdoc",
-    "eslint": "eslint",
+    "eslint": "eslint src/*.js test/*.js",
     "test": "nyc ava",
     "test:watch": "npm test -- --watch"
   },

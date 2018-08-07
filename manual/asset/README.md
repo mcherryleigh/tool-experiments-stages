@@ -1,0 +1,1 @@
+Placeholder for assets (like images) used in the manual markdown files in esdoc generation.

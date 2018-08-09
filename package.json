@@ -1,5 +1,5 @@
 {
-  "name": "tool-experiments",
+  "name": "tool-experiments-stages",
   "scripts": {
     "ci:sendCoverage": "nyc report --reporter=text-lcov | coveralls",
     "esdoc": "esdoc",

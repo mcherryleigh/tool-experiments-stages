@@ -1,25 +1,15 @@
-language: node_js
-node_js:
-  - "node"
-  - "10"
-  - "9"
-  - "8"
+cache: bundler
 
-before_install:
-  - echo "before install placeholder"
-install:
-  - "npm install"
-script:
-  - "npm run eslint"
-  - "npm run test"
-  - "npm run ci:sendCoverage"
-  - "npm run esdoc"
-deploy:
-  local-dir: docs
-  provider: pages
-  skip-cleanup: true
-  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-  keep-history: true
-  on:
-    branch: master
-    node: '10'
+jobs:
+  include:
+    - stage: prepare cache
+      script: npm install
+      node: node
+    - &unit-test
+      stage: test
+      script: npm run test
+      node: 10
+    - <<: *unit-test
+      node: 9
+    - <<: *unit-test
+      node: 8

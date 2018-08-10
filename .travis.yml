@@ -2,14 +2,16 @@ cache: bundler
 
 jobs:
   include:
-    - stage: prepare cache
-      script: npm install
-      node: node
-    - &unit-test
+    - stage: lint
+      language: node_js
+      node_js:
+        - "node"
+      script: npm run lint
       stage: test
+      language: node_js
+      node_js:
+        - "node"
+        - "10"
+        - "9"
+        - "8"
       script: npm run test
-      node: 10
-    - <<: *unit-test
-      node: 9
-    - <<: *unit-test
-      node: 8

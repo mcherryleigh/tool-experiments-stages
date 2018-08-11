@@ -18,6 +18,8 @@ jobs:
     - stage: deploy changes to github releases
       script: echo "tbd releases"
     - stage: deploy docs to github pages
+      node_js:
+        - "node"
       script: npm run esdoc
       deploy:
         local-dir: docs
@@ -27,6 +29,4 @@ jobs:
         keep-history: true
         on:
           branch: master
-          node: '10'
-
     - stage: deploy new version to NPM

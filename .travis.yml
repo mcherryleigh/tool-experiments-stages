@@ -18,7 +18,14 @@ jobs:
         - "npm run test"
         - "npm run ci:sendCoverage"
     - stage: deploy changes to github releases
-      script: echo "tbd releases"
+      deploy:
+        provider: releases
+        api_key:
+          secure: $GITHUB_TOKEN
+        file: "./README.md"
+        skip_cleanup: true
+        on:
+          tags: true
     - stage: deploy docs to github pages
       language: node_js
       node_js:

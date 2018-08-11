@@ -18,9 +18,10 @@ jobs:
     - stage: deploy changes to github releases
       script: echo "tbd releases"
     - stage: deploy docs to github pages
+      language: node_js
       node_js:
         - "node"
-      script: npm run esdoc
+      script: npm ci && npm run esdoc
       deploy:
         local-dir: docs
         provider: pages

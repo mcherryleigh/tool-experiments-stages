@@ -31,3 +31,4 @@ jobs:
         on:
           branch: master
     - stage: deploy new version to NPM
+      script: echo "tbd publish to npm"

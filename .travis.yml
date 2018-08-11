@@ -14,7 +14,9 @@ jobs:
         - "10"
         - "9"
         - "8"
-      script: npm run test
+      script:
+        - "npm run test"
+        - "npm run ci:sendCoverage"
     - stage: deploy changes to github releases
       script: echo "tbd releases"
     - stage: deploy docs to github pages
